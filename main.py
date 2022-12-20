@@ -4,9 +4,6 @@ import glob
 import shutil
 import PySimpleGUI as sg
 
-# Set the window layout
-layout = [[sg.Text("This is a file mover utility program. It allows you to move txt files from one location to another.")], [sg.Button("OK")]]
-
 # First the window layout in 2 columns
 file_list_column = [
     [
