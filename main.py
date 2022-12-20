@@ -87,33 +87,3 @@ while True:
             print('something happened here')
 
 window.close()
-
-
-'''
-# Set the working directory to the Documents folder
-os.chdir('/Users/jakek/Documents')
-path = os.getcwd()
-
-# Get list of all files excluding folders and print it for validation
-files = (glob.glob('*.txt'))
-print(f'files in {path}')
-for file in files:
-    print(file)
-
-
-# Check to see if a directory called 'txt_files' exists. If not, creates directory
-if not os.path.exists('txt_files'):
-    os.mkdir('txt_files')
-
-# copies .txt files over | does not overwrite
-for file in files:
-    shutil.copy2(file,'txt_files')
-
-# Navigates into txt_files and then prints out a list of copied files for validation
-os.chdir('txt_files')
-path = os.getcwd()
-files = (file for file in os.listdir(path)
-            if os.path.isfile(os.path.join(path, file)))
-print(f'files in {path}')
-for file in files:
-    print(file)'''
