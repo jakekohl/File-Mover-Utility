@@ -76,11 +76,15 @@ while True:
             # copies .txt files over | does not overwrite
             src, dest = values['-FOLDER-'],values['-FOLDER2-']
             print(f'I am copying txt files from {src} to {dest}')
+            print(fnames)
             for file in fnames:
-                print(file)
                 shutil.copy2(file,dest)
+            os.chdir(dest)
+            currentdir = os.getcwdb
+            print(f'I am printing out files from {currentdir}')
+            print(os.listdir)
         except:
-            pass
+            print('something happened here')
 
 window.close()
 
