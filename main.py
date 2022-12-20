@@ -75,12 +75,20 @@ while True:
             print(f'I am copying txt files from {src} to {dest}')
             print(fnames)
             for file in fnames:
-                shutil.copy2(file,dest)
+                fullpath = os.path.join(src,file)
+                print(fullpath)
+                shutil.copy2(fullpath,dest) 
             os.chdir(dest)
-            currentdir = os.getcwdb
+            currentdir = os.getcwd()
             print(f'I am printing out files from {currentdir}')
-            print(os.listdir)
+            print(os.listdir())
+        except IOError as e:
+            print(e)
+        except shutil.SameFileError:
+            print("Source and destination represents the same file.")
+        except PermissionError:
+            print("Permission denied.")
         except:
-            print('something happened here')
+            print('I have no idea what happened')
 
 window.close()
