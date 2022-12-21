@@ -19,8 +19,8 @@ file_list_column = [
 ]
 # For now will only show the name of the file that was chosen
 destination_viewer_column = [
-    [sg.Text("Choose files that you want to move from the list:"),
-    sg.In(size=(25, 1), enable_events=True, key="-FOLDER2-"),
+    [sg.Text("TXT files on the left will be moved to the following directory:")],
+    [sg.In(size=(25, 1), enable_events=True, key="-FOLDER2-"),
         sg.FolderBrowse()
     ],
     [sg.Button("COPY", enable_events=True,key='-COPY-'), sg.Cancel(),
