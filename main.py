@@ -4,6 +4,9 @@ import glob
 import shutil
 import PySimpleGUI as sg
 
+
+# Theme/Color
+sg.theme('LightPurple')
 # First the window layout in 2 columns
 file_list_column = [
     [
@@ -13,13 +16,13 @@ file_list_column = [
     ],
     [
         sg.Listbox(
-            values=[], enable_events=True, size=(40, 20), key="-FILE LIST-"
+            values=[], enable_events=True, size=(40, 10), key="-FILE LIST-"
         )
     ],
 ]
 # For now will only show the name of the file that was chosen
 destination_viewer_column = [
-    [sg.Text("TXT files on the left will be moved to the following directory:")],
+    [sg.Text("Files on the left will be moved to the following directory:")],
     [sg.In(size=(25, 1), enable_events=True, key="-FOLDER2-"),
         sg.FolderBrowse()
     ],
@@ -55,7 +58,7 @@ while True:
             f
             for f in file_list
             if os.path.isfile(os.path.join(folder, f))
-            and f.lower().endswith((".txt"))
+                #and f.lower().endswith((".txt"))
         ]
         window["-FILE LIST-"].update(fnames)
     elif event == "-FILE LIST-":  # A file was chosen from the listbox
